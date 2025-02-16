@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q3 Quiz2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      summary{
+        background-color: ghostwhite;
+      }  
+   
+      #name{
+        border: 3px solid gray;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      label, p{
+        font-weight: bold;
+        color:black;
+        font-family: sans-serif;
+      }
+      .row{
+        display: flex;
+      }
+      #ticket{
+        width: 800px;
+        height: 400px;
+      }
+      button{
+        font-family: sans-serif;
+      }
+      body{
+        background-image: url(https://balletheloisanegri.com.br/wp-content/uploads/2024/03/2015GISELLE_Artists-of-The-Australian-Ballet.-PhotoJeffBusby-1-1024x683.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
+      hr{
+        color: white;
+      }
+    </style>
+</head>
+
+<body>
+    <br>
+     <center>
+        <div class="col-md-6" style="background-color: black; color: white; font-family: monospace;">
+
+
+          <script>  
+          document.write("<h1>Ticketing Center</h1>");
+          </script>
+        </div>
+      </center>
+      <hr>
+ 
+     <center>
+        <div class="col-md-6">
+          <details ontoggle="message1()">
+            <summary>
+              <b>Contact Information</b>
+              <br>
+              <i id="message1"></i>
+            </summary>
+
+              <form>
+                  <br>
+                    <label>Contact Information</label> 
+                        <input type="text" id="name" class="form-control" required > 
+                  <br>
+                    <label>Email</label> 
+                        <input type="email" id="name" class="form-control" required> 
+                  <br>     
+               
+                    <button type="button" class="btn btn-danger" onclick="info()"> SUBMIT INFO</button>
+              </form>
+
+             
+          </details>
+        </div>
+      </center>
+
+      <br>
+
+      <center>
+        <div class="col-md-6">
+          <details ontoggle="message2()">
+            <summary>
+              <b>Ticket Price</b>
+              <br>
+              <i id="message2"></i>
+            </summary>
+
+             <form>
+                  <br>
+                    <label>Choose your seat:</label> 
+                        <select class="form-select" id="seat">
+                            <option value="none">Select</option>
+                            <option value="3000">Orchestra</option>
+                            <option value="2000">Parterre</option>
+                            <option value="1000">Mezzanine</option>
+                            <option value="500">Balcony</option>
+                        </select>
+                    <br>
+                    <label>Choose an option</label> 
+                        <select class="form-select" id="discount">
+                            <option value="none">Select</option>
+                            <option value="0.2">V.I.P.</option>
+                            <option value="0">Audience</option>
+                        </select>
+
+                    <br><br>
+                    <button type="button" class="btn btn-danger" onclick="check_discount()"> TICKET PRICE </button>
+              </form>
+          </details>
+        </div>
+      </center>
+
+      <br>
+
+      <center>
+        <div class="col-md-6">
+          <details ontoggle="message3()">
+            <summary>
+              <b>Print Ticket</b>
+              <br>
+              <i id="message3"></i>
+            </summary>
+            <br>
+         
+               <img src="TICKET.jpg" id="ticket">
+                <button type="button" class="btn btn-danger" onclick="print_ticket()"> PRINT TICKET</button>
+           
+              <br><br><br>
+             <a href="index.html"><button type="Submit" class="btn btn-info"> Buy more tickets</button></a>
+          </details>
+        </div>
+        <hr>
+        <p>&copy; BRIANNA GARCIA</p>
+      </center>
+
+      <br>
+
+      
+
+      <script>
+        
+       function message1(){
+        document.getElementById('message1').innerHTML = "Fill out the form below."; 
+       }
+
+        function message2(){
+        document.getElementById('message2').innerHTML = "Check your ticket price."; 
+       }
+
+        function message3(){
+        document.getElementById('message3').innerHTML = "Select your ticket."; 
+       }
+
+       function print_ticket(){
+        window.alert('Check your email for your ticket. Thank you!');
+       }
+
+        function info(){
+        var name = document.getElementById('name').value;
+        
+        window.alert('Thanks ' + name + '! Proceed to the next section.');
+      }
+      
+        function check_discount(){
+
+          var seat = document.getElementById('seat').value;
+          var disc = document.getElementById('discount').value;   
+          var final_rate = seat - (disc * seat) ;
+
+          window.alert('Your ticket price is ' + final_rate + '. Proceed to the next section.');
+        }
+      </script>
+
+      
+</body>
+</html>
